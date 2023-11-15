@@ -4,7 +4,7 @@ export interface Artifacts {
     name: string,
     type: string,
     description: string,
-    alignLeft: boolean,
+    alignLeft: boolean | undefined,
     isVideo: boolean
     
 }

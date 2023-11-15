@@ -1,7 +1,6 @@
 import { Component, Input, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Artifacts } from '../artifacts';
-import { DomSanitizer } from '@angular/platform-browser';
 import { YouTubePlayerModule } from '@angular/youtube-player';
 
 
@@ -11,6 +10,7 @@ import { YouTubePlayerModule } from '@angular/youtube-player';
   imports: [CommonModule,YouTubePlayerModule],
   template: `
   <script src="https://www.youtube.com/iframe_api"></script>
+  <ng-container *ngIf="artifacts">
   <section class="reflection" [ngClass]="{'rightAlign': !artifacts.alignLeft,'leftAlign': artifacts.alignLeft }">
       <img class="listing-photo" [ngClass]="{'hidden': artifacts.isVideo}" [src]="artifacts.content" alt="Exterior photo of {{artifacts.name}}" width="500px">
       <div [ngClass]="{'hidden': !artifacts.isVideo}">
@@ -20,6 +20,7 @@ import { YouTubePlayerModule } from '@angular/youtube-player';
       <div [innerHTML]="artifacts.description"></div>
       <div class="clear"></div>      
     </section>
+    </ng-container>
   `,
   styleUrls: ['./artifact.component.css']
 })
