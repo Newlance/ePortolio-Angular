@@ -1,0 +1,11 @@
+#resume {
+    text-align: center;
+    width: 100%;
+}
+
+    #resume iframe {
+        width: 850px;
+        
+        height: 1850px;
+        border: none;
+    }
