@@ -1,7 +1,6 @@
 import { Component, Input, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Artifacts } from '../artifacts';
-import { HousingLocationComponent } from '../housing-location/housing-location.component';
 import { DomSanitizer } from '@angular/platform-browser';
 import { YouTubePlayerModule } from '@angular/youtube-player';
 
@@ -9,7 +8,7 @@ import { YouTubePlayerModule } from '@angular/youtube-player';
 @Component({
   selector: 'app-artifact',
   standalone: true,
-  imports: [CommonModule,HousingLocationComponent,YouTubePlayerModule],
+  imports: [CommonModule,YouTubePlayerModule],
   template: `
   <script src="https://www.youtube.com/iframe_api"></script>
   <section class="reflection" [ngClass]="{'rightAlign': !artifacts.alignLeft,'leftAlign': artifacts.alignLeft }">
