@@ -2,8 +2,10 @@ name: Deploy to github sites
 
 on:
   push:
-    branches:
-      - 'master'
+    branches: [ "main" ]
+  pull_request:
+    types: [opened, synchronize, reopened, closed]
+    branches: [ "main" ]
 
 jobs:
   build:
